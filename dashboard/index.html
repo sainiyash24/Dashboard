@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Basic page settings -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LearnHub Dashboard</title>
+
+  <!-- Connect CSS file -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Main dashboard container -->
+  <div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+
+      <!-- Logo and website name -->
+      <div class="logo">
+        <div class="logo-icon">L</div>
+        <h2>LearnHub</h2>
+      </div>
+
+      <!-- Sidebar navigation -->
+      <nav>
+
+        <!-- Dashboard link -->
+        <a href="#" class="active">
+          <i class="fa-solid fa-house"></i>
+          Dashboard
+        </a>
+
+        <!-- Users dropdown -->
+        <div class="nav-group">
+
+          <button class="nav-toggle">
+            <span>
+              <i class="fa-solid fa-users"></i>
+              Users
+            </span>
+            <span class="arrow">⌄</span>
+          </button>
+
+          <div class="submenu">
+            <a href="#">All Users</a>
+            <a href="#">Add User</a>
+            <a href="#">User Roles</a>
+          </div>
+
+        </div>
+
+        <!-- Courses dropdown -->
+        <div class="nav-group">
+
+          <button class="nav-toggle">
+            <span>
+              <i class="fa-solid fa-book-open"></i>
+              Courses
+            </span>
+            <span class="arrow">⌄</span>
+          </button>
+
+          <div class="submenu">
+            <a href="#">All Courses</a>
+            <a href="#">Add Course</a>
+            <a href="#">Categories</a>
+          </div>
+
+        </div>
+
+        <!-- Reports link -->
+        <a href="#" class="reports-link">
+          <i class="fa-solid fa-file-lines"></i>
+          <span>Reports</span>
+        </a>
+
+        <!-- Settings dropdown -->
+        <div class="nav-group">
+
+          <button class="nav-toggle">
+            <span>
+              <i class="fa-solid fa-gear"></i>
+              Settings
+            </span>
+            <span class="arrow">⌄</span>
+          </button>
+
+          <div class="submenu">
+            <a href="#">General</a>
+            <a href="#">Appearance</a>
+            <a href="#">Notifications</a>
+          </div>
+
+        </div>
+
+      </nav>
+
+    </aside>
+
+    <!-- Main content -->
+    <main class="main-content">
+
+      <!-- Top navigation bar -->
+      <header class="topbar">
+
+        <!-- Sidebar open/close button -->
+        <button class="menu-button" id="menuButton" aria-label="Toggle sidebar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Search box with search icon -->
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search here..." aria-label="Search">
+        </div>
+
+        <!-- User profile section -->
+        <div class="profile">
+
+          <!-- Notification bell -->
+          <div class="notification">
+            <i class="fa-regular fa-bell"></i>
+            <span class="notification-count">13</span>
+          </div>
+
+          <div class="profile-divider"></div>
+
+          <!-- Profile photo -->
+          <img src="images/yash.jpeg" alt="Yash Saini" class="profile-photo">
+
+          <p>Yash Saini</p>
+
+          <!-- Profile dropdown -->
+          <div class="profile-dropdown">
+
+            <button class="profile-arrow" id="profileButton" aria-label="Open profile menu" aria-expanded="false">
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div class="profile-menu" id="profileMenu">
+              <a href="#" class="profile-option">
+                <i class="fa-solid fa-user"></i> Profile
+              </a>
+
+              <a href="#" class="profile-option">
+                <i class="fa-solid fa-gear"></i> Settings
+              </a>
+
+              <a href="#" class="profile-option">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </header>
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <span>Home</span>
+        <span>&gt;</span>
+        <span>Dashboard</span>
+      </div>
+
+      <!-- Dashboard heading -->
+      <section class="welcome">
+        <h1>Dashboard</h1>
+        <p>Welcome back, Yash!</p>
+      </section>
+
+      <!-- Dashboard statistics cards -->
+      <section class="stats">
+
+        <!-- Total users -->
+        <div class="card">
+
+          <div class="stat-icon blue">
+            <i class="fa-solid fa-users"></i>
+          </div>
+
+          <div class="stat-info">
+            <h3>Total Users</h3>
+            <h2>05</h2>
+            <a href="#">View Users →</a>
+          </div>
+
+        </div>
+
+        <!-- Total courses -->
+        <div class="card">
+
+          <div class="stat-icon green">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+
+          <div class="stat-info">
+            <h3>Total Courses</h3>
+            <h2>10</h2>
+            <a href="#">View Courses →</a>
+          </div>
+
+        </div>
+
+        <!-- Total enrollments -->
+        <div class="card">
+
+          <div class="stat-icon orange">
+            <i class="fa-solid fa-clipboard-list"></i>
+          </div>
+
+          <div class="stat-info">
+            <h3>Total Enrollments</h3>
+            <h2>20</h2>
+            <a href="#">View Enrollments →</a>
+          </div>
+
+        </div>
+
+        <!-- Pending approvals -->
+        <div class="card">
+
+          <div class="stat-icon purple">
+            <i class="fa-solid fa-gear"></i>
+          </div>
+
+          <div class="stat-info">
+            <h3>Pending Approvals</h3>
+            <h2>6</h2>
+            <a href="#">View Details →</a>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Recent users and Quick Actions -->
+      <section class="content-area">
+
+        <!-- Recent users panel -->
+        <div class="panel">
+
+          <div class="panel-heading">
+            <h3>Recent Users</h3>
+            <a href="#">View All →</a>
+          </div>
+
+          <!-- Recent users table -->
+          <table>
+
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>1</td>
+                <td>Jatin Sharma</td>
+                <td>jatin@example.com</td>
+                <td>Student</td>
+                <td>
+                  <span class="status active-status">Active</span>
+                </td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+                <td>Shevya</td>
+                <td>shevya@example.com</td>
+                <td>Instructor</td>
+                <td>
+                  <span class="status active-status">Active</span>
+                </td>
+              </tr>
+
+              <tr>
+                <td>3</td>
+                <td>Yuvraj</td>
+                <td>yuvraj@example.com</td>
+                <td>Student</td>
+                <td>
+                  <span class="status inactive-status">Inactive</span>
+                </td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+                <td>Priyanshu</td>
+                <td>priyanshu@example.com</td>
+                <td>Instructor</td>
+                <td>
+                  <span class="status active-status">Active</span>
+                </td>
+              </tr>
+
+              <tr>
+                <td>5</td>
+                <td>Shivam</td>
+                <td>shivam@example.com</td>
+                <td>Student</td>
+                <td>
+                  <span class="status active-status">Active</span>
+                </td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+        <!-- Quick Actions panel -->
+        <div class="panel">
+
+          <h3>Quick Actions</h3>
+
+          <div class="quick-actions">
+
+            <!-- Add new user -->
+            <button class="action-blue">
+              <i class="fa-solid fa-user-plus"></i>
+              <span>Add New User</span>
+            </button>
+
+            <!-- Create course -->
+            <button class="action-green">
+              <i class="fa-solid fa-book-open"></i>
+              <span>Create Course</span>
+            </button>
+
+            <!-- Manage categories -->
+            <button class="action-orange">
+              <i class="fa-solid fa-folder-plus"></i>
+              <span>Manage Categories</span>
+            </button>
+
+            <!-- Settings -->
+            <button class="action-purple">
+              <i class="fa-solid fa-gear"></i>
+              <span>Settings</span>
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Connect JavaScript file -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>

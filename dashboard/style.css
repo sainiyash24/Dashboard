@@ -1,0 +1,867 @@
+/* 1. BASIC SETTINGS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+}
+
+/* 2. MAIN DASHBOARD LAYOUT */
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 0 25px 25px;
+    background-color: #f1f5f9;
+}
+
+/* 3. SIDEBAR */
+.sidebar {
+    flex: 0 0 228px;
+    width: 228px;
+    background-color: #172337;
+    color: white;
+    padding: 12px;
+    overflow: hidden;
+    transition: width 0.3s ease,
+        flex-basis 0.3s ease,
+        padding 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* LearnHub Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 65px;
+    margin-bottom: 35px;
+}
+
+.logo-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.logo h2 {
+    font-size: 24px;
+    color: white;
+    white-space: nowrap;
+}
+
+/* 4. SIDEBAR LINKS */
+.sidebar nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #d1d5db;
+    text-decoration: none;
+    padding: 11px 12px;
+    margin-bottom: 4px;
+    border-radius: 6px;
+    min-height: 42px;
+    font-size: 15px;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background-color: #2563eb;
+    color: white;
+}
+
+.sidebar nav a i,
+.nav-toggle i {
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* 5. TOPBAR */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    min-height: 65px;
+    padding: 10px 0;
+    margin-bottom: 25px;
+    background-color: white;
+    position: relative;
+}
+
+/* White background across the top */
+.topbar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -25px;
+    right: -25px;
+    background-color: white;
+    z-index: 0;
+}
+
+.topbar > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hamburger Button */
+.menu-button {
+    background-color: transparent;
+    color: #172337;
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    flex-shrink: 0;
+}
+
+/* Search Box and Search Icon */
+.search-box {
+    display: flex;
+    align-items: center;
+    flex: 0 1 430px;
+    width: 100%;
+    max-width: 430px;
+    height: 44px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+    background-color: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #64748b;
+}
+
+.search-box i {
+    display: block;
+    font-size: 16px;
+    margin-right: 12px;
+}
+
+.search-box input {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-box input::placeholder {
+    color: #64748b;
+}
+
+/* 6. PROFILE AND NOTIFICATIONS */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+/* Bell Icon */
+.notification {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 32px;
+    font-size: 22px;
+    color: #172337;
+    cursor: pointer;
+}
+
+/* Red Notification Count */
+.notification-count {
+    position: absolute;
+    top: -5px;
+    right: -7px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ef2929;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1;
+    z-index: 2;
+}
+
+/* Line Between Bell and Profile */
+.profile-divider {
+    width: 1px;
+    height: 32px;
+    background-color: #e2e8f0;
+    margin: 0 4px;
+    flex-shrink: 0;
+}
+
+/* Profile Photo */
+.profile-photo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid white;
+    flex-shrink: 0;
+}
+
+.profile p {
+    white-space: nowrap;
+    margin: 0;
+    font-size: 15px;
+    color: #111827;
+}
+
+.profile-arrow {
+    font-size: 13px;
+    color: #172337;
+}
+
+/* 7. BREADCRUMB */
+.breadcrumb {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* 8. WELCOME SECTION */
+.welcome {
+    margin-bottom: 22px;
+}
+
+.welcome h1 {
+    color: #172337;
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    color: #64748b;
+    font-size: 16px;
+}
+
+/* 9. STATISTICS CARDS */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.stats .card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    min-width: 0;
+    padding: 20px 13px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #e2e8f0;
+}
+
+/* Statistics Icon Boxes */
+.stat-icon {
+    width: 54px;
+    min-width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 22px;
+}
+
+.blue {
+    background-color: #dbeafe;
+}
+
+.green {
+    background-color: #d1fae5;
+}
+
+.orange {
+    background-color: #ffedd5;
+}
+
+.purple {
+    background-color: #ede9fe;
+}
+
+/* Statistics Icon Colors */
+.stat-icon.blue i {
+    color: #2563eb;
+}
+
+.stat-icon.green i {
+    color: #059669;
+}
+
+.stat-icon.orange i {
+    color: #d97706;
+}
+
+.stat-icon.purple i {
+    color: #7c3aed;
+}
+
+.stat-info {
+    min-width: 0;
+}
+
+.stat-info h3 {
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+.stat-info h2 {
+    font-size: 25px;
+    margin-bottom: 12px;
+    color: #172337;
+}
+
+.stat-info a {
+    color: #2563eb;
+    font-size: 12px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.stat-info a:hover {
+    text-decoration: underline;
+}
+
+.stats .card:nth-child(2) .stat-info a {
+    color: #059669;
+}
+
+.stats .card:nth-child(3) .stat-info a {
+    color: #d97706;
+}
+
+.stats .card:nth-child(4) .stat-info a {
+    color: #7c3aed;
+}
+
+/* 10. RECENT USERS AND QUICK ACTIONS */
+.content-area {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(300px, 1fr);
+    gap: 20px;
+    align-items: stretch;
+}
+
+.panel {
+    min-width: 0;
+    padding: 18px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #e2e8f0;
+    overflow-x: auto;
+}
+
+.panel h3 {
+    margin-bottom: 20px;
+    color: #172337;
+    font-size: 20px;
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.panel-heading h3 {
+    margin-bottom: 0;
+}
+
+.panel-heading a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* 11. RECENT USERS TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13px;
+}
+
+th {
+    background-color: #f1f5f9;
+    color: #334155;
+    padding: 14px 10px;
+    white-space: nowrap;
+}
+
+td {
+    padding: 16px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #475569;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.active-status {
+    background-color: #d1fae5;
+    color: #047857;
+}
+
+.inactive-status {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+/* 12. QUICK ACTIONS */
+.content-area > .panel:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-area > .panel:last-child > h3 {
+    flex-shrink: 0;
+}
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    flex: 1;
+    min-height: 0;
+}
+
+.quick-actions button {
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 15px 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.quick-actions button i {
+    display: block;
+    font-size: 24px;
+}
+
+.quick-actions button span {
+    display: block;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.action-blue {
+    background-color: #e0efff;
+    color: #1d4ed8;
+}
+
+.action-green {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.action-orange {
+    background-color: #ffedd5;
+    color: #c2410c;
+}
+
+.action-purple {
+    background-color: #f3e8ff;
+    color: #7e22ce;
+}
+
+/* 13. SIDEBAR DROPDOWN MENUS */
+.nav-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 12px;
+    margin-bottom: 4px;
+    background-color: transparent;
+    color: #d1d5db;
+    border: none;
+    border-radius: 6px;
+    text-align: left;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.nav-toggle:hover {
+    background-color: #26364d;
+    color: white;
+}
+
+.nav-toggle span:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-toggle .arrow {
+    transition: transform 0.3s ease;
+}
+
+.submenu {
+    display: none;
+    padding-left: 12px;
+    margin-left: 10px;
+    margin-bottom: 8px;
+    border-left: 1px solid #334155;
+}
+
+.submenu a {
+    font-size: 13px;
+    padding: 9px 10px;
+    margin-bottom: 2px;
+}
+
+.nav-group.open .submenu {
+    display: block;
+}
+
+.nav-group.open .nav-toggle .arrow {
+    transform: rotate(180deg);
+}
+
+/* 14. DESKTOP SIDEBAR OPEN/CLOSE */
+@media (min-width: 601px) {
+    .sidebar.show {
+        flex-basis: 0;
+        width: 0;
+        min-width: 0;
+        padding-left: 0;
+        padding-right: 0;
+        overflow: hidden;
+    }
+}
+
+/* 15. TABLET RESPONSIVENESS */
+@media (min-width: 601px) and (max-width: 1100px) {
+    .sidebar {
+        flex-basis: 200px;
+        width: 200px;
+    }
+
+    .main-content {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .topbar::before {
+        left: -18px;
+        right: -18px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .content-area {
+        grid-template-columns: 1fr;
+    }
+
+    .search-box {
+        flex-basis: 300px;
+        max-width: 300px;
+    }
+}
+
+/* 16. MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+    .sidebar {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 240px;
+        height: 100vh;
+        overflow-y: auto;
+        z-index: 100;
+        transform: translateX(-100%);
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .dashboard {
+        display: block;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 0 15px 15px;
+    }
+
+    .topbar {
+        flex-wrap: wrap;
+        gap: 12px;
+        min-height: 60px;
+        padding: 10px 0;
+        margin-bottom: 22px;
+    }
+
+    .topbar::before {
+        left: -15px;
+        right: -15px;
+    }
+
+    .menu-button {
+        order: 1;
+    }
+
+    .profile {
+        order: 2;
+        gap: 8px;
+        margin-left: auto;
+    }
+
+    .profile p {
+        font-size: 13px;
+    }
+
+    .profile-divider {
+        margin: 0 2px;
+    }
+
+    .profile-photo {
+        width: 32px;
+        height: 32px;
+    }
+
+    .notification-count {
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+    }
+
+    .search-box {
+        order: 3;
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .breadcrumb {
+        font-size: 12px;
+        margin-bottom: 16px;
+    }
+
+    .welcome {
+        margin-bottom: 20px;
+    }
+
+    .welcome h1 {
+        font-size: 28px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .stats .card {
+        padding: 18px;
+    }
+
+    .content-area {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .panel {
+        padding: 15px;
+    }
+
+    .content-area > .panel:last-child {
+        min-height: 400px;
+    }
+
+    table {
+        min-width: 550px;
+    }
+
+    .panel h3 {
+        font-size: 18px;
+    }
+}
+/* Move Search Bar to the Left */
+.search-box {
+    margin-left: 50px;
+    margin-right: auto;
+    transform: translateX(-20px);
+}
+
+/* Move Profile Section Slightly Left */
+.profile {
+    margin-right: 20px;
+    gap: 10px;
+}
+/* Profile dropdown container */
+.profile-dropdown {
+    position: relative;
+}
+
+/* Profile arrow button */
+.profile-arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #17233b;
+    font-size: 14px;
+    padding: 8px;
+}
+
+/* Dropdown menu */
+.profile-menu {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    width: 170px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    padding: 6px 0;
+}
+
+/* Show menu when active */
+.profile-menu.show {
+    display: block;
+}
+
+/* Menu options */
+.profile-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #17233b;
+    font-size: 14px;
+}
+
+/* Hover effect */
+.profile-option:hover {
+    background-color: #f1f5f9;
+}
+/* Sidebar links hover and keyboard focus */
+.sidebar nav a:hover,
+.sidebar nav a:focus-visible {
+    background-color: #e2e8f0;
+    color: #2563eb;
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* Sidebar dropdown buttons */
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+    background-color: #e2e8f0;
+    color: #2563eb;
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* Main menu button */
+.menu-button:hover,
+.menu-button:focus-visible {
+    background-color: #dbeafe;
+    color: #2563eb;
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* Quick action tiles */
+.quick-actions button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.quick-actions button:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 3px;
+}
+
+/* Dashboard cards */
+.stats .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+}
+
+.stats .card:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 3px;
+}
+
+/* Smooth hover effects */
+.quick-actions button,
+.stats .card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Profile dropdown keyboard focus */
+.profile-arrow:focus-visible,
+.profile-option:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Student Registration Form</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header>
+      <div class="header-icon">
+        <i class="fa-regular fa-pen-to-square"></i>
+      </div>
+
+      <div>
+        <h1>Student Registration Form</h1>
+        <p>Fill in the details below to create your account</p>
+      </div>
+    </header>
+
+    <form>
+
+      <fieldset class="form-section">
+
+        <div class="section-heading">
+          <h2>1. Personal Information</h2>
+          <p>Enter your basic details</p>
+        </div>
+
+        <div class="form-grid">
+
+          <div class="field">
+            <label for="name" class="required">Full Name</label>
+
+            <div class="input-icon">
+              <i class="fa-regular fa-user"></i>
+              <input type="text" id="name" placeholder="Enter your full name" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email" class="required">Email Address</label>
+
+            <div class="input-icon">
+              <i class="fa-regular fa-envelope"></i>
+              <input type="email" id="email" placeholder="example@example.com" required>
+            </div>
+          </div>
+
+
+          <div class="field">
+            <label for="password" class="required">Password</label>
+
+            <div class="input-icon password-box">
+              <i class="fa-solid fa-lock"></i>
+
+              <input type="password" id="password" placeholder="Create a password" required>
+
+              <button type="button" class="toggle-password" onclick="togglePassword('password', this)"
+                aria-label="Show password">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="confirm" class="required">Confirm Password</label>
+
+            <div class="input-icon password-box">
+              <i class="fa-solid fa-lock"></i>
+
+              <input type="password" id="confirm" placeholder="Confirm password" required>
+
+              <button type="button" class="toggle-password" onclick="togglePassword('confirm', this)"
+                aria-label="Show password">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+
+
+
+          <div class="field">
+            <label for="dob" class="required">Date of Birth</label>
+            <input type="date" id="dob" required>
+          </div>
+
+          <div class="field">
+            <label class="required">Gender</label>
+
+            <div class="options">
+              <label>
+                <input type="radio" name="gender" value="Male" required> Male
+              </label>
+
+              <label>
+                <input type="radio" name="gender" value="Female"> Female
+              </label>
+
+              <label>
+                <input type="radio" name="gender" value="Other"> Other
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone Number</label>
+
+            <div class="input-icon">
+              <i class="fa-solid fa-phone"></i>
+              <input type="tel" id="phone" placeholder="Enter 10 digit number" maxlength="10">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="age">Age</label>
+            <input type="number" id="age" min="1" max="100" placeholder="18">
+          </div>
+
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+
+        <div class="section-heading">
+          <h2>2. Additional Details</h2>
+          <p>Provide more information about yourself</p>
+        </div>
+
+        <div class="form-grid">
+
+          <div class="field">
+            <label for="country" class="required">Country</label>
+            <select id="country" required>
+              <option value="">Select Country</option>
+              <option value="india">India</option>
+              <option value="canada">Canada</option>
+              <option value="usa">USA</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="state" class="required">State</label>
+            <select id="state" required>
+              <option value="">Select State</option>
+              <option value="haryana">Haryana</option>
+              <option value="punjab">Punjab</option>
+              <option value="delhi">Delhi</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="city" class="required">City</label>
+            <select id="city" required>
+              <option value="">Select City</option>
+              <option value="ambala">Ambala</option>
+              <option value="chandigarh">Chandigarh</option>
+              <option value="mohali">Mohali</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="pincode">Pincode</label>
+            <input type="text" id="pincode" placeholder="Enter pincode" maxlength="6">
+          </div>
+
+          <div class="field">
+            <label for="course" class="required">Course Interested In</label>
+            <select id="course" required>
+              <option value="">Select Course</option>
+              <option value="html-css">HTML & CSS</option>
+              <option value="java">Java</option>
+              <option value="python">Python</option>
+              <option value="react">React</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label class="required">Preferred Mode</label>
+            <div class="options">
+              <label><input type="radio" name="mode" value="online" required> Online</label>
+              <label><input type="radio" name="mode" value="offline"> Offline</label>
+              <label><input type="radio" name="mode" value="hybrid"> Hybrid</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="time">Time Slot</label>
+            <input type="time" id="time">
+          </div>
+
+          <div class="field">
+            <label for="joining">Joining Date</label>
+            <input type="date" id="joining">
+          </div>
+
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+
+        <div class="section-heading">
+          <h2>3. Other Inputs</h2>
+          <p>Explore different input types</p>
+        </div>
+
+        <div class="form-grid other-inputs-grid">
+
+          <div class="field">
+            <label for="profile">Upload Profile Picture</label>
+            <input type="file" id="profile" accept="image/*">
+          </div>
+
+          <div class="field">
+            <label for="color">Select Your Favorite Color</label>
+            <div class="color-box">
+              <input type="color" id="color" value="#2878ed">
+            </div>
+          </div>
+
+
+
+          <div class="field">
+            <label for="rating">Rate Your Knowledge (1 - 10)</label>
+
+            <div class="rating-box">
+              <input type="range" id="rating" min="1" max="10" value="5">
+              <span id="rating-value">5</span>
+            </div>
+          </div>
+
+
+
+          <div class="field">
+            <label>Select Multiple Skills</label>
+
+            <div class="skills-list">
+              <label><input type="checkbox" name="skills" value="HTML"> HTML</label>
+              <label><input type="checkbox" name="skills" value="CSS"> CSS</label>
+              <label><input type="checkbox" name="skills" value="JavaScript"> JavaScript</label>
+              <label><input type="checkbox" name="skills" value="React"> React</label>
+              <label><input type="checkbox" name="skills" value="Java"> Java</label>
+              <label><input type="checkbox" name="skills" value="Spring Boot"> Spring Boot</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Hobbies</label>
+            <div class="options">
+              <label><input type="checkbox" name="hobbies" value="reading"> Reading</label>
+              <label><input type="checkbox" name="hobbies" value="music"> Music</label>
+              <label><input type="checkbox" name="hobbies" value="sports"> Sports</label>
+              <label><input type="checkbox" name="hobbies" value="traveling"> Traveling</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="website">Website URL</label>
+            <input type="url" id="website" placeholder="https://example.com">
+          </div>
+
+          <div class="field">
+            <label for="feedback">Your Feedback</label>
+            <textarea id="feedback" rows="3" placeholder="Write your feedback here..."></textarea>
+          </div>
+
+          <div class="field">
+            <label class="required">Terms & Conditions</label>
+            <div class="options">
+              <label>
+                <input type="checkbox" name="terms" required>
+                I agree to the <a href="#" target="_blank">Terms and Conditions</a>
+              </label>
+            </div>
+          </div>
+
+        </div>
+        <div class="buttons">
+          <button type="reset">Reset</button>
+          <button type="submit">Submit</button>
+        </div>
+      </fieldset>
+
+    </form>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>

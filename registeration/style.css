@@ -1,0 +1,457 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 26px 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    background-color: #f4f8fb;
+    color: #17233b;
+}
+
+/* Main white container */
+.container {
+    width: 100%;
+    max-width: 1650px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Blue header */
+header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 30px;
+    color: #fff;
+    background: linear-gradient(110deg, #04b852, #3188f5);
+}
+
+.header-icon {
+    flex-shrink: 0;
+    font-size: 35px;
+}
+
+header h1 {
+    margin: 0 0 8px;
+    font-size: 25px;
+}
+
+header p {
+    margin: 0;
+    font-size: 15px;
+}
+
+/* Form spacing */
+form {
+    padding: 0 18px 18px;
+}
+
+/* Section boxes */
+fieldset {
+    min-width: 0;
+    margin: 14px 0;
+    padding: 0;
+    border: 1px solid #e7edf4;
+    border-radius: 10px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/*Section title and subtitle */
+.section-heading {
+    padding: 16px 20px 14px;
+    background: linear-gradient(110deg, #f1f5f9, #f7f9fb);
+    border-bottom: 1px solid #e7edf4;
+}
+
+.section-heading h2 {
+    margin: 0 0 6px;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.section-heading p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/*Default grid: four columns on desktop */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px 30px;
+    padding: 20px;
+}
+
+/*Each form field */
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+/*Labels and required-field star */
+label {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.required::after {
+    content: " *";
+    color: #e33434;
+}
+
+/*Common input styles */
+input:not([type="radio"]):not([type="checkbox"]):not([type="range"]):not([type="color"]),
+select,
+textarea {
+    width: 100%;
+    min-width: 0;
+    min-height: 38px;
+    padding: 9px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #334155;
+    font: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #8491a3;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/*Icons inside text inputs */
+.input-icon {
+    position: relative;
+    min-width: 0;
+}
+
+.input-icon>i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #64748b;
+    pointer-events: none;
+}
+
+/* Leave space for the left-side icon */
+.input-icon input {
+    padding-left: 40px !important;
+}
+
+.input-icon input[type="password"] {
+    padding-right: 40px;
+}
+
+/* Leave room for the eye icon on password fields */
+.password-box input {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 40px;
+    padding-right: 45px;
+}
+
+/* Password eye button */
+.password-box .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #64748b;
+}
+
+/* Override the general icon position for the eye */
+.password-box .toggle-password i {
+    position: static;
+    transform: none;
+    color: inherit;
+}
+
+.password-box .toggle-password:hover {
+    color: #2878ed;
+}
+
+/* Focus style for keyboard and mouse users */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #bfdbfe;
+    border-color: #2878ed;
+}
+
+/* Radio buttons and checkboxes */
+.options {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 38px;
+}
+
+.options label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.options input[type="radio"],
+.options input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    accent-color: #2878ed;
+}
+
+/*Section 3: Other Inputs layout */
+.other-inputs-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 24px;
+    row-gap: 22px;
+    align-items: start;
+}
+
+
+
+/* File upload: keep native file button visible */
+.other-inputs-grid input[type="file"] {
+    padding: 6px;
+}
+
+
+/* Color picker */
+
+.color-box {
+    width: 100%;
+    height: 38px;
+    padding: 4px 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: white;
+}
+
+.color-box input[type="color"] {
+    width: 38px;
+    height: 28px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+
+
+/* Rating slider */
+.rating-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+}
+
+.rating-box input[type="range"] {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    accent-color: #2878ed;
+}
+
+.rating-box span {
+    width: 20px;
+    text-align: center;
+}
+
+.skills-list {
+    height: 138px;
+    overflow-y: auto;
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.skills-list label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.skills-list input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #2878ed;
+    cursor: pointer;
+}
+
+/* Feedback box */
+.other-inputs-grid textarea {
+    height: 94px;
+    min-height: 94px;
+}
+
+/* Terms link */
+.other-inputs-grid a {
+    color: #2878ed;
+}
+
+/* Terms & Conditions ko next row mein lane ke liye */
+.other-inputs-grid>.field:has(input[name="terms"]) {
+    grid-column: 1 / 4;
+}
+
+/* Reset and Submit buttons */
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 0 20px 20px;
+}
+
+.buttons button {
+    min-width: 90px;
+    height: 40px;
+}
+
+button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    font: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button[type="submit"] {
+    background-color: #2878ed;
+    color: #fff;
+}
+
+button[type="submit"]:hover {
+    background-color: #1d63d4;
+}
+
+button[type="reset"] {
+    background-color: #e2e8f0;
+    color: #334155;
+}
+
+button[type="reset"]:hover {
+    background-color: #cbd5e1;
+}
+
+/* Tablet: two columns */
+@media (max-width: 900px) {
+    body {
+        padding: 15px;
+    }
+
+    .form-grid,
+    .other-inputs-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    /* Allow Section 3 fields to flow naturally */
+    .other-inputs-grid>.field {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .other-inputs-grid>.field:has(input[name="terms"]) {
+        grid-column: 1 / -1;
+    }
+
+    header h1 {
+        font-size: 23px;
+    }
+}
+
+/* Mobile: one column */
+@media (max-width: 500px) {
+    body {
+        padding: 8px;
+    }
+
+    header {
+        gap: 12px;
+        padding: 18px;
+    }
+
+    .header-icon {
+        font-size: 28px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    header p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    form {
+        padding: 0 8px 12px;
+    }
+
+    fieldset {
+        margin: 12px 0;
+    }
+
+    .section-heading {
+        padding: 13px 14px;
+    }
+
+    .section-heading h2 {
+        font-size: 16px;
+    }
+
+    .form-grid,
+    .other-inputs-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+        padding: 15px;
+    }
+
+    .other-inputs-grid>.field {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .other-inputs-grid>.field:has(input[name="terms"]) {
+        grid-column: 1 / -1;
+    }
+
+    .buttons {
+        margin-top: 15px;
+    }
+}
